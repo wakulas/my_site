@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+    <h2>Главная страница</h2>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-3">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">Done</label>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет записей</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
